@@ -1,3 +1,6 @@
+# Employee-Time-Tracking-Payroll-System
+This is a MERN Stack (MongoDB, Express, React, Node.js) based HR &amp; Employee Management System.
+
 **Employee Time Tracking & Payroll System**
 
 This is a MERN Stack (MongoDB, Express, React, Node.js) based HR & Employee Management System.

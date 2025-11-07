@@ -10,7 +10,7 @@ function Login() {
     const loginValues = { email, password };
 
     try {
-      const response = await fetch("http://localhost:5000/api/auth/login", {
+      const response = await fetch("https://employee-time-tracking-payroll-system-3.onrender.com/api/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

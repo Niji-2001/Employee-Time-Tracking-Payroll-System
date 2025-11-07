@@ -8,7 +8,7 @@ function Leaves() {
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("userdata"));
     const token = user?.token;
-    fetch("http://localhost:5000/api/leave/my-leaves/", {
+    fetch("https://employee-time-tracking-payroll-system-3.onrender.com/api/leave/my-leaves/", {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((res) => res.json())
@@ -26,7 +26,7 @@ function Leaves() {
       const user = JSON.parse(localStorage.getItem("userdata"));
       const token = user?.token;
 
-      const response = await fetch(`http://localhost:5000/api/leave/${id}`, {
+      const response = await fetch(`https://employee-time-tracking-payroll-system-3.onrender.com/api/leave/${id}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`,

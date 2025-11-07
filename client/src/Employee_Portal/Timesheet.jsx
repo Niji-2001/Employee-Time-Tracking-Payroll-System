@@ -12,7 +12,7 @@ function Timesheet() {
         const token = user?.token;
         setName(user?.name);
         const res = await fetch(
-          "http://localhost:5000/api/attendance/my-logs",
+          "https://employee-time-tracking-payroll-system-3.onrender.com/api/attendance/my-logs",
           {
             headers: { Authorization: `Bearer ${token}` },
           }

@@ -7,14 +7,14 @@ function EmployeeView() {
   const [employeeview, setEmployee] = useState([])
   const [refresh, setRefresh] = useState(0)
   useEffect(() => {
-    fetch('http://localhost:5000/api/employees').then((res) => res.json()).then((result) => {
+    fetch('https://employee-time-tracking-payroll-system-3.onrender.com/api/employees').then((res) => res.json()).then((result) => {
       setEmployee(result)
     })
   }, [refresh])
 
 
   const employeeDelete = (id) => {
-    fetch(`http://localhost:5000/api/employees/${id}`, {
+    fetch(`https://employee-time-tracking-payroll-system-3.onrender.com/api/employees/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

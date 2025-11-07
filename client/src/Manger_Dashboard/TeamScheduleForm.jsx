@@ -8,7 +8,7 @@ function TeamScheduleForm() {
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("userdata"));
     const token = user?.token;
-    fetch("http://localhost:5000/api/leave/all/", {
+    fetch("https://employee-time-tracking-payroll-system-3.onrender.com/api/leave/all/", {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((res) => res.json())
@@ -24,7 +24,7 @@ function TeamScheduleForm() {
     };
     const user = JSON.parse(localStorage.getItem("userdata"));
     const token = user?.token;
-    fetch(`http://localhost:5000/api/leave/approve/${id}`, {
+    fetch(`https://employee-time-tracking-payroll-system-3.onrender.com/api/leave/approve/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

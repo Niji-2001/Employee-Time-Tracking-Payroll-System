@@ -13,7 +13,7 @@ function LeaveCreate() {
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("userdata"));
     const token = user?.token;
-    fetch("http://localhost:5000/api/settings/", {
+    fetch("https://employee-time-tracking-payroll-system-3.onrender.com/api/settings/", {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((res) => res.json())
@@ -36,7 +36,7 @@ function LeaveCreate() {
 
     const user = JSON.parse(localStorage.getItem("userdata"));
     const token = user?.token;
-    fetch("http://localhost:5000/api/leave/apply", {
+    fetch("https://employee-time-tracking-payroll-system-3.onrender.com/api/leave/apply", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

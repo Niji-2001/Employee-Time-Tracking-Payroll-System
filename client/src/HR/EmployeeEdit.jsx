@@ -17,7 +17,7 @@ function EmployeeAdd() {
   const { id } = useParams();
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/employees/${id}`)
+    fetch(`https://employee-time-tracking-payroll-system-3.onrender.com/api/employees/${id}`)
       .then((res) => res.json())
       .then((result) => {
         console.log(result);
@@ -32,7 +32,7 @@ function EmployeeAdd() {
       });
     const user = JSON.parse(localStorage.getItem("userdata"));
     const token = user?.token;
-    fetch("http://localhost:5000/api/settings/", {
+    fetch("https://employee-time-tracking-payroll-system-3.onrender.com/api/settings/", {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((res) => res.json())
@@ -55,7 +55,7 @@ function EmployeeAdd() {
       hourly_wage: hourly_wage,
     };
 
-    fetch(`http://localhost:5000/api/employees/${id}`, {
+    fetch(`https://employee-time-tracking-payroll-system-3.onrender.com/api/employees/${id}`, {
       method: "put",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newEmployee),
@@ -63,7 +63,7 @@ function EmployeeAdd() {
       .then((res) => res.json())
       .then((data) => {
         console.log("Employee created successfully:", data);
-        navigate("/employee-view");
+        navigate("/");
       })
       .catch((err) => {
         console.error("Error creating employee:", err);
@@ -164,7 +164,7 @@ function EmployeeAdd() {
                       >
                         <option value="">Select Role</option>
                         {rolesList.map((roleval) => {
-                          return <option>{roleval}</option>;
+                          return <option value={roleval}>{roleval}</option>;
                         })}
                       </select>
                     </div>{" "}

@@ -10,7 +10,7 @@ function Payroll() {
         const user = JSON.parse(localStorage.getItem("userdata"));
         const token = user?.token;
         const res = await fetch(
-          "http://localhost:5000/api/attendance/get-payroll",
+          "https://employee-time-tracking-payroll-system-3.onrender.com/api/attendance/get-payroll",
           {
             headers: { Authorization: `Bearer ${token}` },
           }

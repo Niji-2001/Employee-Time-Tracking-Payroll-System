@@ -19,7 +19,7 @@ function MasterSettings() {
     };
 
     axios
-      .post("http://localhost:5000/api/settings/", assignValues, {
+      .post("https://employee-time-tracking-payroll-system-3.onrender.com/api/settings/", assignValues, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

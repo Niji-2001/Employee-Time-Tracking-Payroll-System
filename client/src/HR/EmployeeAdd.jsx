@@ -30,12 +30,12 @@ function EmployeeAdd() {
       hourly_wage: hourly_wage,
     };
 
-    //  axios.post("http://localhost:5000/api/employees", newEmployee)
+    //  axios.post("https://employee-time-tracking-payroll-system-3.onrender.com/api/employees", newEmployee)
     //
     // })
     const user = JSON.parse(localStorage.getItem("userdata"));
     const token = user?.token;
-    fetch("http://localhost:5000/api/employees", {
+    fetch("https://employee-time-tracking-payroll-system-3.onrender.com/api/employees", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -56,7 +56,7 @@ function EmployeeAdd() {
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("userdata"));
     const token = user?.token;
-    fetch("http://localhost:5000/api/settings/", {
+    fetch("https://employee-time-tracking-payroll-system-3.onrender.com/api/settings/", {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((res) => res.json())

@@ -17,7 +17,7 @@ function EmployeeDashboard() {
         setUser(user);
 
         const res = await fetch(
-          "http://localhost:5000/api/attendance/my-logs",
+          "https://employee-time-tracking-payroll-system-3.onrender.com/api/attendance/my-logs",
           {
             headers: { Authorization: `Bearer ${token}` },
           }
@@ -39,7 +39,7 @@ function EmployeeDashboard() {
       const user = JSON.parse(localStorage.getItem("userdata"));
       const token = user?.token;
 
-      const res = await fetch("http://localhost:5000/api/attendance/clock", {
+      const res = await fetch("https://employee-time-tracking-payroll-system-3.onrender.com/api/attendance/clock", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
