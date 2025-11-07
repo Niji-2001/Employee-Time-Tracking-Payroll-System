@@ -1,9 +1,7 @@
 import { useState } from "react";
 
 import "./App.css";
-// import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { HashRouter, Routes, Route } from "react-router-dom";
-
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AdminLayout from "./Component/AdminLayout";
 import ApproveRejectEmployeeTimesheets from "./Manger_Dashboard/ApproveRejectEmployeeTimesheets";
 import EmployeeAdd from "./HR/EmployeeAdd";
@@ -23,12 +21,12 @@ function App() {
     JSON.parse(localStorage.getItem("userdata"))
   );
   return (
-    <HashRouter>
+    <BrowserRouter>
       {auth == null ? (
         <Routes>
           <Route path="/" element={<Login />} />
         </Routes>
-      ) : auth.role === "hr_admin" ? (
+      ) : auth.role == "hr_admin" ? (
         <Routes>
           <Route path="/" element={<EmployeeView />} />
           <Route path="/employee-add" element={<EmployeeAdd />} />
@@ -39,8 +37,9 @@ function App() {
           />
           <Route path="/payroll" element={<Payroll />} />
           <Route path="/employee-attendence" element={<EmployeeAttendance />} />
+
         </Routes>
-      ) : auth.role === "manager" ? (
+      ) : auth.role == "manager" ? (
         <Routes>
           <Route path="/" element={<AdminLayout />} />
           <Route
@@ -49,7 +48,7 @@ function App() {
           />
           <Route path="/employee-leave-types" element={<TeamScheduleForm />} />
         </Routes>
-      ) : auth.role === "employee" ? (
+      ) : auth.role == "employee" ? (
         <Routes>
           <Route path="/" element={<EmployeeDashboard />} />
           <Route path="/employee-timesheet" element={<Timesheet />} />
@@ -57,7 +56,7 @@ function App() {
           <Route path="/leave-add" element={<LeaveCreate />} />
         </Routes>
       ) : null}
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 
