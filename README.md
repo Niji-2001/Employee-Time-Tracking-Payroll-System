@@ -38,8 +38,8 @@ This will create a default HR admin:
 
 **Running the Project**
 
-  Backend (Server):-npm run dev( http://localhost:5000)
-  Frontend (Client):- npm run dev(http://localhost:5173)
+  Backend (Server):-npm run dev( http://localhost:5000 || https://employee-time-tracking-payroll-syst.vercel.app/)
+  Frontend (Client):- npm run dev(http://localhost:5173 || https://employee-time-tracking-payroll-system-3.onrender.com/)
 
 **User Roles & Flow**
 
